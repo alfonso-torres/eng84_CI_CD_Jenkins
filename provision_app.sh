@@ -11,7 +11,7 @@ sudo apt-get upgrade -y
 sudo apt-get install nginx -y
 
 # install nodejs with required version and dependecies
-sudo apt-get install python-software-properties
+sudo apt-get install python-software-properties -y
 
 # NGINX reverse proxy automation
 sudo echo "server {
