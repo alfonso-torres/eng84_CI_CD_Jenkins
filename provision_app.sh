@@ -13,10 +13,18 @@ sudo apt-get install nginx -y
 # install nodejs with required version and dependecies
 sudo apt-get install python-software-properties -y
 
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+# install npm with pm2 -g
+sudo npm install pm2 -g
+
 # NGINX reverse proxy automation
 sudo echo "server {
     listen 80;
+
     server_name _;
+
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
