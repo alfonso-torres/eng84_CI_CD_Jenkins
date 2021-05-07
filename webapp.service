@@ -1,0 +1,18 @@
+[Unit]
+Description=Web App
+
+[Service]
+Type=simple
+Restart=on-failure
+Environment=NODE_PORT=3000
+Environment=DB_HOST=mongodb://10.0.0.47:27017/posts
+ExecStart=/usr/bin/nodejs /home/ubuntu/app/app/app.js
+User=ubuntu
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/ubuntu/app/app
+
+[Install]
+WantedBy=multi-user.target
